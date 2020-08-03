@@ -12,7 +12,7 @@ public class LinearEquationResolver {
 
         System.out.println("Nhap b: ");
         double b=scanner.nextDouble();
-
+        
         if(a!=0) {
             double x = -b / a;
             System.out.println("Result x: " + x);
