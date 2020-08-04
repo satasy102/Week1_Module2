@@ -7,7 +7,8 @@ public class PrintPrimesSmaller100 {
                 if (i % j == 0) {
                     check=false;
                     break;
-                } else check = true;
+                }
+                check = true;
             }
             if(check) System.out.printf("%d ",i);
         }
