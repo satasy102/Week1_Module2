@@ -18,9 +18,9 @@ public class Check_Prime {
                     break;
                 }
             }
-            if(isPrime){
-                System.out.printf("%d is a prime",number);
-            } else System.out.printf("%d is not a prime", number);
         }
+        if(isPrime){
+            System.out.printf("%d is a prime",number);
+        } else System.out.printf("%d is not a prime", number);
     }
 }
