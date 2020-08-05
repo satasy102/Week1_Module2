@@ -13,15 +13,15 @@ public class PhuongTrinhBac2 {
         this.c=input.nextFloat();
     }
 
-    private double getA() {
+    public double getA() {
         return  this.a;
     }
 
-    private double getB() {
+    public double getB() {
         return  this.b;
     }
 
-    private double getC() {
+    public double getC() {
         return  this.c;
     }
 
