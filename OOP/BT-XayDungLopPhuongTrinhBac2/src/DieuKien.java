@@ -6,8 +6,8 @@ public class DieuKien {
     }
 
     public void ketQua(){
-        if(pt.a==0){
-            if(pt.b==0){
+        if(pt.getA()==0){
+            if(pt.getB()==0){
                 System.out.print("phuong trinh vo so nghiem");
             }
             else{
