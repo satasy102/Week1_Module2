@@ -1,15 +1,14 @@
+import java.util.Scanner;
+
 public class Ketqua {
     public static void main(String[] args) {
-        double a=0;
-        double b=0;
-        double c=0;
 
         System.out.println("Nhap a:");
-        CheckInput.test(a);
+        double a= checkInput();
         System.out.println("Nhap b:");
-        CheckInput.test(b);
+        double b= checkInput();
         System.out.println("Nhap c:");
-        CheckInput.test(c);
+        double c= checkInput();
 
         QuadraticEquation phuongtrinhbac2=new QuadraticEquation(a,b,c);
 
@@ -38,5 +37,24 @@ public class Ketqua {
                 }
             }
         }
+    }
+
+    public static double checkInput(){
+        String str=null;
+        double a;
+
+        Scanner scanner=new Scanner(System.in);
+
+        while (true){
+            try{
+                str=scanner.nextLine();
+                a=Double.parseDouble(str);
+                break;
+            }
+            catch (Exception ex){
+                System.out.printf("%s khong phai la so. Moi nhap lai: ",str);
+            }
+        }
+        return a;
     }
 }
