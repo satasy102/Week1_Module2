@@ -3,16 +3,16 @@ public class Fan {
     public final byte MEDIUM = 2;
     public final byte FAST= 3;
 
-    private int speed = SLOW;
-    private boolean on = false;
-    private double radius = 5;
-    private String color = "blue";
+    private int speed =SLOW;
+    private boolean on =false;
+    private double radius =5;
+    private String color="blue";
 
     public int getSpeed (){
         return speed;
     }
 
-    public boolean getOn(){
+    public boolean isOn(){
         return on;
     }
 
@@ -41,14 +41,10 @@ public class Fan {
     }
 
     Fan(){
-        this.speed=SLOW;
-        this.on=false;
-        this.radius=5;
-        this.color="blue";
     }
 
     public String toString(){
-        if (this.getOn()) return "Fan is On. \nSpeed: " + this.speed + "\nColor: " + this.color + "\nradius: " + this.radius;
+        if (this.isOn()) return "Fan is On. \nSpeed: " + this.getSpeed () + "\nColor: " + this.getColor() + "\nradius: " + this.getRadius();
         else return  "Fan is Off";
 
     }

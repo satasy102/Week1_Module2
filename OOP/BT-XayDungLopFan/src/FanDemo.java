@@ -12,6 +12,6 @@ public class FanDemo {
         fan2.setRadius(5);
         fan2.setColor("blue");
         fan2.setOn(false);
-        System.out.println("FAN 2: " + fan2.toString());
+        System.out.println("\nFAN 2: " + fan2.toString());
     }
 }
