@@ -14,7 +14,6 @@ import java.util.Scanner;
 
 public class BaiTap1 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
 
         System.out.println("Nhap so nguyen n:");
         int n=checkInput();
