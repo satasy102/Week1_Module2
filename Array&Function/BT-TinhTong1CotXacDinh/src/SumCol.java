@@ -2,14 +2,16 @@ import java.util.Scanner;
 
 public class SumCol {
     public static void main(String[] args) {
-        
-        Scanner scanner=new Scanner(System.in);
+
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Nhap so hang:");
-        byte rows=scanner.nextByte();
+        int rows = 0;
+        rows = checkInput(rows);
 
         System.out.println("Nhap so cot: ");
-        byte cols=scanner.nextByte();
+        int cols = 0;
+        cols = checkInput(cols);
 
         int[][] matrix = new int[rows][cols];
         for (int row = 0; row < matrix.length; row++) {
@@ -26,14 +28,35 @@ public class SumCol {
         }
 
         System.out.println("Ban muon tinh tong cot thu bao nhieu?");
-        byte colss=scanner.nextByte();
+        int colss = 0;
+        colss = checkInput(colss);
 
         int total = 0;
-        if (colss > 0 && colss < cols) {
-            for (int row = 0; row < rows; row++) {
-                total += matrix[row][colss-1];
+        while (colss <= 0 || colss > cols) {
+            System.out.println("Khong co cot nay. Moi nhap lai:");
+            colss = checkInput(colss);
+        }
+
+        for (int row = 0; row < rows; row++) {
+            total += matrix[row][colss - 1];
+        }
+        System.out.println("Sum for column " + cols + " is " + total);
+
+
+    }
+
+    public static int checkInput(int a) {
+        String str = null;
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            try {
+                str = sc.nextLine();
+                a = Integer.parseInt(str);
+                break;
+            } catch (Exception ex) {
+                System.out.println("Khong phai so. Nhap lai:");
             }
-            System.out.println("Sum for column " + cols + " is "+ total);
-        } else System.out.println("Khong co cot nay");
+        }
+        return a;
     }
 }

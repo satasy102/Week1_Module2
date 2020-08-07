@@ -5,29 +5,51 @@ public class Add {
         Scanner scanner = new Scanner(System.in);
 
         int[] array = {10, 4, 6, 7, 8, 0, 0, 0, 0, 0};
-        System.out.println("Enter number need to add:");
-        int num = scanner.nextInt();
-
-        System.out.println("Enter index need to add:");
-        int index = scanner.nextInt();
 
         System.out.print("Mang ban dau: ");
-        for (int element:array) {
+        for (int element : array) {
             System.out.print(element + " ");
         }
 
-        if (index < 0 || index >= array.length) {
-            System.out.println("\nKhong chen duoc vao mang");
-        } else {
-            for (int i = array.length-1; i > index; i--) {
-                array[i] = array[i-1];
+        System.out.println("\nNhap so can chen:");
+        int num = 0;
+        num = checkInput(num);
 
-            } array[index]=num;
-            System.out.println("\nMang sau khi chen: ");
-            for(int element: array)
-                System.out.print(element+" ");
+        System.out.println("Ban muon chen vao vi tri nao?");
+        int viTri = 0;
+        viTri = checkInput(viTri);
+        int index = viTri - 1;
+
+        while (index < 0 || index >= array.length) {
+            System.out.println("Chi so vi tri bi sai. Nhap lai:");
+            viTri = checkInput(viTri);
+            index = viTri - 1;
         }
 
+        for (int i = array.length - 1; i > index; i--) {
+            array[i] = array[i - 1];
+        }
 
+        array[index] = num;
+
+        System.out.println("\nMang sau khi chen: ");
+        for (int element : array)
+            System.out.print(element + " ");
+
+    }
+
+    public static int checkInput(int a) {
+        String str = null;
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            try {
+                str = sc.nextLine();
+                a = Integer.parseInt(str);
+                break;
+            } catch (Exception ex) {
+                System.out.println("Khong phai so. Nhap lai:");
+            }
+        }
+        return a;
     }
 }
