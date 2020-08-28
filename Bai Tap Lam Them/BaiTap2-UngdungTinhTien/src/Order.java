@@ -23,4 +23,11 @@ public class Order {
         this.slMon = slMon;
     }
 
+    public long thanhTien(Drink drink){
+        return drink.getDonGia()*this.slMon;
+    }
+
+    public void displayOrder(Drink drink){
+        System.out.printf("%-10s%-10s%-10s%-10s\n",tenMon,slMon,drink.getDonGia(),thanhTien(drink));
+    }
 }

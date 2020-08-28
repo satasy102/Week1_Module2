@@ -1,53 +1,55 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Table {
 
-    private String iDTable;
-    private boolean status = true;
-    private Order[] orders=new Order[4];
+    private int iDTable;
+    private boolean status = false;
+    private List<Order> orders=new ArrayList<>();
 
-    Table(String iDTable, boolean status, Order[] orders) {
+    public Table() {}
+
+    Table(int iDTable, boolean status) {
         this.iDTable=iDTable;
         this.status=status;
-        this.orders=orders;
     }
 
-    public String getiDTable() {
+    public int getiDTable() {
         return iDTable;
     }
 
-    public boolean isAvailable() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setAvalable(boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public Order[] getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(Order[] orders) {
-        this.orders = orders;
+    public void addOrders(Order order) {
+        orders.add(order);
     }
 
     public void turnOffTable() {
+        if (status) {
+            this.status = false;
+        }
+        System.out.println("Chua su dung");
+    }
+
+    public void turnOnTable() {
         if (!status) {
             this.status = true;
         }
         System.out.println("Dang su dung");
     }
 
-    public void turnOnTable() {
-        if (status) {
-            this.status = false;
-        }
-        System.out.println("Dang su dung");
-    }
-
     public void displayStatusTable() {
-        if (status) System.out.printf("%-20s%s", iDTable, "Chua su dung");
-        else System.out.printf("%-20s%s", iDTable, "Dang su dung");
+        if (status) System.out.printf("%-5d%s\n", iDTable, "Dang su dung");
+        else System.out.printf("%-5d%s\n", iDTable, "Chua su dung");
     }
 }
